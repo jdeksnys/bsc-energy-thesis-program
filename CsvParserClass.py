@@ -26,7 +26,6 @@ class CsvParserClass:
                 # check if even no. of elements in row (long+lat)
                 if df.shape[1]%2==0:
                     
-
                     for row in range(0,df.shape[0]):
                         iter=0
 
