@@ -28,7 +28,7 @@ class ApiWorkerClass():
         url=f'https://wps.neweuropeanwindatlas.eu/api/{mesoMicro}-atlas/v1/get-data-point?latitude={latitude}&longitude={longitude}&height={heightInput}{varInput}'
         return url
 
-    # make request, save .nc file to current (net_cfd_downloads) directory
+    # make request, save .nc file to current (net_cdf_downloads) directory
     @staticmethod
     def requestAPI(url):
         r=requests.get(url,allow_redirects=True)
