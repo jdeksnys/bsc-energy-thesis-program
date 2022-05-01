@@ -22,22 +22,29 @@ class ApiWorkerClassClass:
             filePath=f"{os.getcwd()}/net_cdf_downloads/{scale}_data.csv"
 
             if (not(os.path.exists(filePath))):
+                
                 for loc in locations:
                     latitude=loc[1]
                     longitude=loc[2]
+
                     if scale=="mesoscale":
                         heights=heights_mesoscale
                     elif scale=="microscale":
                         heights=heights_microscale
 
                     for h in heights:
-                        # call steps
+
                         if scale=="mesoscale":
                             variables=vars_mesoscale
                         elif scale=="microscale":
                             variables=vars_microscale
                         url=ApiWorkerClass.MakeUrl(scale,latitude,longitude,h,variables)
-                        ApiWorkerClass.requestAPI(url)
-                        ApiWorkerClass.convertCSV(variables,scale,loc,h)
+
+                        try:
+                            ApiWorkerClass.requestAPI(url)
+                            ApiWorkerClass.convertCSV(variables,scale,loc,h)
+                        except:
+                            pass
+
             else:
                 print(f"Error!  {scale} data already downloaded")
