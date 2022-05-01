@@ -3,7 +3,7 @@ environment="development"
 
 if(environment=="development"):
     scales=["mesoscale","microscale"]
-    # locations=[["A1",56.066587, 21.085157],["A2",56.041954, 21.107528]]    
+    locations=[["A1",56.066587, 21.085157],["A2",56.041954, 21.107528]]    
     heights_mesoscale=[75.0]
     heights_microscale=[50.0]
     vars_mesoscale=['wind_speed_mean']

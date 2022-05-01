@@ -14,7 +14,6 @@ os.system('Clear')
 
 
 
-
 class program:
 
     def main():
@@ -29,4 +28,3 @@ class program:
         ApiCallerClass.ApiWorkerClassClass.CallApi(scales,locations,heights_mesoscale,heights_microscale,vars_mesoscale,vars_microscale)
 
 program.main()
-
